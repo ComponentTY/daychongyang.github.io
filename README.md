@@ -3,7 +3,6 @@
 ## HTMLCSS 篇
 
 1. SEO 和语义化
-2. HTML5 新特性
 
 ## CSS 篇
 
