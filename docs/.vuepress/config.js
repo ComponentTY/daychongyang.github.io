@@ -25,7 +25,7 @@ module.exports = {
 				{
 					title: "JavaScript",
 					path: "/daily/javascript/",
-					children: ["/daily/javascript/数据类型", "/daily/javascript/类型转换"]
+					children: ["/daily/javascript/数据类型", "/daily/javascript/类型转换", "/daily/javascript/类型判断"]
 				},
 				{
 					title: "React",
