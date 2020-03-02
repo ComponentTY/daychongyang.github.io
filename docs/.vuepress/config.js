@@ -24,7 +24,7 @@ module.exports = {
 				},
 				{
 					title: "内存空间",
-					children: ["/javascript/内存空间/数据结构"]
+					children: ["/javascript/内存空间/内存管理"]
 				}
 			]
 		}
