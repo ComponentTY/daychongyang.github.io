@@ -5,7 +5,7 @@ module.exports = {
 	themeConfig: {
 		nav: [
 			{text: "Daily", link: "/daily/"},
-			{text: "JavaScript", link: "/javascript/"},
+			{text: "JavaScript", link: "/javascript/数据类型和数据结构/数据结构"},
 			{
 				text: "Links",
 				items: [{text: "前端精读周刊", link: "https://github.com/dt-fe/weekly"}]
@@ -15,7 +15,6 @@ module.exports = {
 			"/javascript/": [
 				{
 					title: "数据类型和数据结构",
-					path: "/javascript/数据类型和数据结构/",
 					children: [
 						"/javascript/数据类型和数据结构/数据结构",
 						"/javascript/数据类型和数据结构/数据类型",
