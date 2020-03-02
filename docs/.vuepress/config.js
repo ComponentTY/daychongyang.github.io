@@ -21,6 +21,10 @@ module.exports = {
 						"/javascript/数据类型和数据结构/类型转换",
 						"/javascript/数据类型和数据结构/类型判断"
 					]
+				},
+				{
+					title: "内存空间",
+					children: ["/javascript/内存空间/数据结构"]
 				}
 			]
 		}
