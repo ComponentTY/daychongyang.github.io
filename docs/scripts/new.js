@@ -1,5 +1,5 @@
 function create() {
-	var current = new Object()
+	var current = {}
 
 	var Constructor = Array.prototype.shift.call(arguments)
 
