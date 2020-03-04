@@ -12,7 +12,7 @@ module.exports = {
 			}
 		],
 		sidebar: {
-			"/daily/": ["/daily/new"],
+			"/daily/": ["/daily/new", "/daily/instanceof"],
 			"/javascript/": [
 				{
 					title: "数据类型和数据结构",
