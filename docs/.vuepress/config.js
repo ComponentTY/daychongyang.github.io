@@ -4,7 +4,7 @@ module.exports = {
 	base: "/",
 	themeConfig: {
 		nav: [
-			{text: "Daily", link: "/daily/"},
+			{text: "Daily", link: "/daily/new"},
 			{text: "JavaScript", link: "/javascript/数据类型和数据结构/数据结构"},
 			{
 				text: "Links",
@@ -12,6 +12,7 @@ module.exports = {
 			}
 		],
 		sidebar: {
+			"/daily/": ["/daily/new"],
 			"/javascript/": [
 				{
 					title: "数据类型和数据结构",
