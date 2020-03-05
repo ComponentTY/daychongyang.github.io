@@ -6,10 +6,15 @@ module.exports = {
     nav: [
       { text: "Daily", link: "/daily/new" },
       { text: "JavaScript", link: "/javascript/数据类型和数据结构/数据结构" },
+      { text: "GitHub", link: "https://github.com/daychongyang" },
       {
         text: "Links",
         items: [
-          { text: "前端精读周刊", link: "https://github.com/dt-fe/weekly" }
+          { text: "前端精读周刊", link: "https://github.com/dt-fe/weekly" },
+          {
+            text: "山月行",
+            link: "https://shanyue.tech/"
+          }
         ]
       }
     ],
@@ -27,7 +32,10 @@ module.exports = {
         },
         {
           title: "内存空间",
-          children: ["/javascript/内存空间/内存管理"]
+          children: [
+            "/javascript/内存空间/内存管理",
+            "/javascript/内存空间/垃圾回收"
+          ]
         }
       ]
     }
