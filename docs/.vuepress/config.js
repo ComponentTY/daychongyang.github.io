@@ -48,6 +48,26 @@ module.exports = {
             "/javascript/内存空间/内存管理",
             "/javascript/内存空间/垃圾回收"
           ]
+        },
+        {
+          title: "执行上下文",
+          children: []
+        },
+        {
+          title: "变量对象",
+          children: []
+        },
+        {
+          title: "作用域和作用域链",
+          children: []
+        },
+        {
+          title: "闭包",
+          children: []
+        },
+        {
+          title: "this",
+          children: []
         }
       ]
     }
