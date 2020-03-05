@@ -6,17 +6,29 @@ module.exports = {
     nav: [
       { text: "Daily", link: "/daily/new" },
       { text: "JavaScript", link: "/javascript/数据类型和数据结构/数据结构" },
-      { text: "GitHub", link: "https://github.com/daychongyang" },
       {
-        text: "Links",
+        text: "工具",
         items: [
+          { text: "Overreacted", link: "https://overreacted.io/" },
           { text: "前端精读周刊", link: "https://github.com/dt-fe/weekly" },
           {
             text: "山月行",
             link: "https://shanyue.tech/"
           }
         ]
-      }
+      },
+      {
+        text: "Links",
+        items: [
+          { text: "Overreacted", link: "https://overreacted.io/" },
+          { text: "前端精读周刊", link: "https://github.com/dt-fe/weekly" },
+          {
+            text: "山月行",
+            link: "https://shanyue.tech/"
+          }
+        ]
+      },
+      { text: "GitHub", link: "https://github.com/daychongyang" }
     ],
     sidebar: {
       "/daily/": ["/daily/new", "/daily/instanceof"],
