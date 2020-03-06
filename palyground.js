@@ -1,3 +1,8 @@
-console.log(Number(new Date()));
+"use strict"
 
-console.log(new Date().valueOf());
+function test() {
+	a = "112138"
+	this.b = 12138
+}
+
+test()
