@@ -16,7 +16,7 @@
 
 1. <br />
 
-![image.png](./images/ios-app-name.png)
+![image.png](/react-native/ios-app-name.png)
 
 ## 图标
 
@@ -39,7 +39,7 @@
 
 1. <br />
 
-![image.png](./images/ios-app-icon.png)
+![image.png](/react-native/ios-app-icon.png)
 
 | 尺寸      | 名称                                                | 用途                | 是否必须         |
 | :-------- | :-------------------------------------------------- | :------------------ | :--------------- |
@@ -175,12 +175,12 @@ public class MainActivity extends ReactActivity {
 > Xcode 11
 
 1. **用 XCode 打开项目**
-1. **选中  `LaunchScreen.xib`  中的 View，取消选中  `Use As Launch Screen`。![image.png](./images/ios-xcode-start-screen.png)**
-1. **新建  LaunchImage, 上传对应尺寸图片  ![image.png](./images/ios-xcode-launch-image.png)**
-1. **应用配置 => General => App Icons and Launch Images => Launch Screen File 设置为空![image.png](./images/ios-xcode-reset-launch-image.png)**
+1. **选中  `LaunchScreen.xib`  中的 View，取消选中  `Use As Launch Screen`。![image.png](/react-native/ios-xcode-start-screen.png)**
+1. **新建  LaunchImage, 上传对应尺寸图片  ![image.png](/react-native/ios-xcode-launch-image.png)**
+1. **应用配置 => General => App Icons and Launch Images => Launch Screen File 设置为空![image.png](/react-native/ios-xcode-reset-launch-image.png)**
 1. **应用配置 => Build Settings => Asset Catalog Launch Image Set Name 设置为 LaunchImage**<br />
 
-![image.png](./images/ios-xcode-launch-image-set-name.png)
+![image.png](/react-native/ios-xcode-launch-image-set-name.png)
 
 ```jsx
 import React, {useEffect} from "react"

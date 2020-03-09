@@ -6,6 +6,7 @@ module.exports = {
 		nav: [
 			{text: "Daily", link: "/daily/new"},
 			{text: "JavaScript", link: "/javascript/数据类型和数据结构/数据结构"},
+			{text: "React", link: "/react/react.md"},
 			{
 				text: "工具",
 				items: [{text: "SketchBoard", link: "https://sketchboard.me/"}]
@@ -58,6 +59,13 @@ module.exports = {
 				{
 					title: "this",
 					children: []
+				}
+			],
+			"/react/": [
+				"/react/react-redux",
+				{
+					title: "ReactNative",
+					children: ["/react/react-native/platform-mac-workspace", "/react/react-native/common-setting"]
 				}
 			]
 		}
