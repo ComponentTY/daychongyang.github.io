@@ -25,7 +25,7 @@ module.exports = {
 			{text: "GitHub", link: "https://github.com/daychongyang"}
 		],
 		sidebar: {
-			"/daily/": ["/daily/new", "/daily/instanceof", "/daily/bind", "/daily/call"],
+			"/daily/": ["/daily/new", "/daily/instanceof", "/daily/bind", "/daily/call", "/daily/apply"],
 			"/javascript/": [
 				{
 					title: "数据类型和数据结构",
