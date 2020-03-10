@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>内存泄漏 | DayDayUp</title>
+    <meta name="description" content="
+什么是内存泄漏?
+
+不再用到的内存, 没有及时释放, 就叫做内存泄漏(memory leak)
+
+常见的内存泄漏类型及避免措施
+
+意外的全局变量
+
+function test() {
+	a = &quot;112138&quot;
+	this.b = 12138
+}
+
+test()
+
+函数内部声明, 未使用 var 关键字, 意外创建全局变量 a;
+
+函数调用, ...">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.7062462e.css" as="style"><link rel="preload" href="/assets/js/app.6bf13929.js" as="script"><link rel="preload" href="/assets/js/6.ecab29b8.js" as="script"><link rel="preload" href="/assets/js/4.0fdee166.js" as="script"><link rel="preload" href="/assets/js/22.6bed2593.js" as="script"><link rel="prefetch" href="/assets/js/1.d1a96e91.js"><link rel="prefetch" href="/assets/js/10.7c76cc40.js"><link rel="prefetch" href="/assets/js/11.0b7391a2.js"><link rel="prefetch" href="/assets/js/12.cf4df190.js"><link rel="prefetch" href="/assets/js/13.03953b3e.js"><link rel="prefetch" href="/assets/js/14.277b1e91.js"><link rel="prefetch" href="/assets/js/15.c0427f96.js"><link rel="prefetch" href="/assets/js/16.46ea34aa.js"><link rel="prefetch" href="/assets/js/17.04324991.js"><link rel="prefetch" href="/assets/js/18.e27b4c58.js"><link rel="prefetch" href="/assets/js/19.e206fa84.js"><link rel="prefetch" href="/assets/js/20.ae4071dc.js"><link rel="prefetch" href="/assets/js/21.98f448f2.js"><link rel="prefetch" href="/assets/js/23.efa5c0d0.js"><link rel="prefetch" href="/assets/js/24.7a9e94a2.js"><link rel="prefetch" href="/assets/js/25.a9211502.js"><link rel="prefetch" href="/assets/js/26.5a3d70c1.js"><link rel="prefetch" href="/assets/js/27.305792ca.js"><link rel="prefetch" href="/assets/js/28.bd46514b.js"><link rel="prefetch" href="/assets/js/29.3f3bf782.js"><link rel="prefetch" href="/assets/js/30.c53c4061.js"><link rel="prefetch" href="/assets/js/31.fbe87801.js"><link rel="prefetch" href="/assets/js/32.7843110d.js"><link rel="prefetch" href="/assets/js/33.8b287c87.js"><link rel="prefetch" href="/assets/js/5.ae96a4d9.js"><link rel="prefetch" href="/assets/js/7.4bad90a4.js"><link rel="prefetch" href="/assets/js/8.33ab62d1.js"><link rel="prefetch" href="/assets/js/9.e1f6c44e.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.5f039e04.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7062462e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">DayDayUp </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">Daily</a></li><li class="nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="nav-item"><a href="https://github.com/daychongyang" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">DayDayUp </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">Daily</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="mobile-nav-item"><a href="https://github.com/daychongyang" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        内存泄漏
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">Day</span> <!----></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-03-10T00:00:00.000Z">
+      2020-03-10
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-d832e844><a href="/tag/JavaScript" data-v-d832e844> JavaScript </a></li><li class="post-tag" data-v-d832e844><a href="/tag/内存空间" data-v-d832e844> 内存空间 </a></li><li class="post-tag" data-v-d832e844><a href="/tag/内存泄漏" data-v-d832e844> 内存泄漏 </a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="内存泄漏"><a href="#内存泄漏" class="header-anchor">#</a> 内存泄漏</h1> <h2 id="什么是内存泄漏"><a href="#什么是内存泄漏" class="header-anchor">#</a> 什么是内存泄漏?</h2> <p>不再用到的内存, 没有及时释放, 就叫做内存泄漏(<code>memory leak</code>)</p> <h2 id="常见的内存泄漏类型及避免措施"><a href="#常见的内存泄漏类型及避免措施" class="header-anchor">#</a> 常见的内存泄漏类型及避免措施</h2> <h3 id="意外的全局变量"><a href="#意外的全局变量" class="header-anchor">#</a> 意外的全局变量</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	a <span class="token operator">=</span> <span class="token string">&quot;112138&quot;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">12138</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>函数内部声明, 未使用 <code>var</code> 关键字, 意外创建全局变量 <code>a</code>;</p> <p>函数调用, 内部 <code>this</code> 指向全局对象 <code>window</code>;</p> <p><strong>JavaScript 文件头部加上 <code>&quot;use strict;&quot;</code>, 启用严格模式解析 JavaScript, 避免意外的全局变量.</strong></p> <h3 id="被遗忘的计时器或回调函数"><a href="#被遗忘的计时器或回调函数" class="header-anchor">#</a> 被遗忘的计时器或回调函数</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> bigData <span class="token operator">=</span> <span class="token function">getBigData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> root <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;root&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		root<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>bigData<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+</code></pre></div><p>计时器未停止, 回调函数未被回收, 其引用的 <code>bigData</code> 同样无法被回收.</p> <p><strong>计时器用完及时 clearInterval/clearTimeout</strong></p> <h3 id="脱离-dom-的引用-未清除-dom-引用"><a href="#脱离-dom-的引用-未清除-dom-引用" class="header-anchor">#</a> 脱离 DOM 的引用/未清除 DOM 引用</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> text <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;text&quot;</span><span class="token punctuation">)</span>
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+</code></pre></div><h4 id="element-text-不能够被回收-变量-text-对其存在引用"><a href="#element-text-不能够被回收-变量-text-对其存在引用" class="header-anchor">#</a> <code>Element#text</code> 不能够被回收, 变量 <code>text</code> 对其存在引用.</h4> <p>解决方案: <code>text = null</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> elements <span class="token operator">=</span> <span class="token punctuation">{</span>
+	button<span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;button&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	text<span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;text&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+elements<span class="token punctuation">.</span>button<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	elements<span class="token punctuation">.</span>text<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">&quot;9527&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">removeButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;button&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">removeButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="element-button-不能够被回收-绑定事件未被移除-对其存在引用"><a href="#element-button-不能够被回收-绑定事件未被移除-对其存在引用" class="header-anchor">#</a> <code>Element#button</code> 不能够被回收, 绑定事件未被移除, 对其存在引用.</h4> <p>解决方案: <code>text = null</code></p> <h3 id="闭包"><a href="#闭包" class="header-anchor">#</a> 闭包</h3> <p>匿名函数可以访问父级作用域的变量。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> theThing <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token keyword">var</span> <span class="token function-variable function">replaceThing</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> originalThing <span class="token operator">=</span> theThing
+	<span class="token keyword">var</span> <span class="token function-variable function">unused</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>originalThing<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hi&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	theThing <span class="token operator">=</span> <span class="token punctuation">{</span>
+		longStr<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token function-variable function">someMethod</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>someMessage<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">setInterval</span><span class="token punctuation">(</span>replaceThing<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+</code></pre></div><p>每次调用 replaceThing ，theThing 得到一个包含一个大数组和一个新闭包（someMethod）的新对象。同时，变量 unused 是一个引用 originalThing 的闭包（先前的 replaceThing 又调用了 theThing ）。</p> <p>最重要的事情是，闭包的作用域一旦创建，它们有同样的父级作用域，作用域是共享的。someMethod 可以通过 theThing 使用，someMethod 与 unused 分享闭包作用域，尽管 unused 从未使用，它引用的 originalThing 迫使它保留在内存中（防止被回收）。当这段代码反复运行，就会看到内存占用不断上升，垃圾回收器（GC）并无法降低内存占用。本质上，闭包的链表已经创建，每一个闭包作用域携带一个指向大数组的间接的引用，造成严重的内存泄漏。</p></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#什么是内存泄漏" title="什么是内存泄漏?">什么是内存泄漏?</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#常见的内存泄漏类型及避免措施" title="常见的内存泄漏类型及避免措施">常见的内存泄漏类型及避免措施</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#意外的全局变量" title="意外的全局变量">意外的全局变量</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#被遗忘的计时器或回调函数" title="被遗忘的计时器或回调函数">被遗忘的计时器或回调函数</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#脱离-dom-的引用-未清除-dom-引用" title="脱离 DOM 的引用/未清除 DOM 引用">脱离 DOM 的引用/未清除 DOM 引用</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#闭包" title="闭包">闭包</a></div></div></div></div> <footer class="footer" data-v-fdbf4940><div class="footer-left-wrap" data-v-fdbf4940><ul class="contact" data-v-fdbf4940></ul></div> <div class="footer-right-wrap" data-v-fdbf4940><ul class="copyright" data-v-fdbf4940><li class="copyright-item" data-v-fdbf4940><a href="/2020/03/10/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/.html" class="nav-link" data-v-fdbf4940>MIT Licensed | Copyright © 2020 Day</a></li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6bf13929.js" defer></script><script src="/assets/js/6.ecab29b8.js" defer></script><script src="/assets/js/4.0fdee166.js" defer></script><script src="/assets/js/22.6bed2593.js" defer></script>
+  </body>
+</html>
