@@ -20,7 +20,7 @@ module.exports = {
 				text: "标签",
 				link: "/tag/"
 			},
-			{text: "GitHub", link: "https://github.com/daychongyang"}
+			{text: "GitHub", link: "https://github.com/daychongyang/daychongyang.github.io"}
 		],
 
 		footer: {
