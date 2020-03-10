@@ -17,7 +17,7 @@ module.exports = {
 				link: "/"
 			},
 			{
-				text: "Tags",
+				text: "标签",
 				link: "/tag/"
 			},
 			{text: "GitHub", link: "https://github.com/daychongyang"}
