@@ -3,7 +3,6 @@ title: oh my zsh
 date: 2020-03-10
 tags:
   - 服务器运维
-  - oh my zsh
 author: Day
 ---
 

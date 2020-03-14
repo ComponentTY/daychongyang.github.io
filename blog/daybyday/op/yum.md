@@ -3,7 +3,6 @@ title: Yum 换源
 date: 2020-03-10
 tags:
   - 服务器运维
-  - yum
 author: Day
 ---
 

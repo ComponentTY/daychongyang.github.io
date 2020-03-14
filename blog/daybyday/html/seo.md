@@ -2,7 +2,6 @@
 title: SEO 和 HTML 语义化
 date: 2020-03-01
 tags:
-  - HTML
   - SEO
 author: Day
 ---
