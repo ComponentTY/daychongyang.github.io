@@ -189,23 +189,23 @@ public class MainActivity extends ReactActivity {
 ![image.png](/react-native/ios-xcode-launch-image-set-name.png)
 
 ```jsx
-import React, {useEffect} from "react"
-import {NavigationContainer} from "@react-navigation/native"
-import SplashScreen from "react-native-splash-screen"
-import {StackNavigator} from "./routes"
-import {User} from "./stores"
+import React, { useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import SplashScreen from "react-native-splash-screen";
+import { StackNavigator } from "./routes";
+import { User } from "./stores";
 
 export default function App() {
-	useEffect(() => {
-		SplashScreen.hide()
-	}, [])
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
-	return (
-		<NavigationContainer>
-			<User.Provider>
-				<StackNavigator />
-			</User.Provider>
-		</NavigationContainer>
-	)
+  return (
+    <NavigationContainer>
+      <User.Provider>
+        <StackNavigator />
+      </User.Provider>
+    </NavigationContainer>
+  );
 }
 ```
