@@ -40,7 +40,7 @@ new Promise(function(resolve, reject) {} /** exxcutor */);
 
 #### Promise 状态
 
-一个 `Promise` 的状态必须为以下状态的一种: `pedning`(等待态)、`fulfilled`(执行态) 、 `rejected`(拒绝态).
+一个 `Promise` 的状态必须为以下状态的一种: `pending`(等待态)、`fulfilled`(执行态) 、 `rejected`(拒绝态).
 
 - `panding`
   - `promise` 可以迁移至 `fulfilled` / `rejected` 状态
