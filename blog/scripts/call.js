@@ -1,3 +1,4 @@
+/** this 指向, 与方法调用所在位置有关, 与方法声明位置无关(除箭头函数外) */
 Function.prototype.call = function(context) {
 	var context = context || window
 	var args = []
