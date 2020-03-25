@@ -1,28 +1,26 @@
-Function.prototype.bind = function(context) {
+Function.prototype.bindX = function(context) {
 	var slice = Array.prototype.slice
 	var toString = Object.prototype.toString
 	var func = this
 	if (typeof func !== "function" || toString.call(func) !== "[object Function]") {
-		throw new TypeError("Function.prototype.bind called error")
+		throw new TypeError("Function.prototype.bindX called error")
 	}
 
 	var preArgs = slice.call(arguments, 1)
 
-	return function() {
+	function noop() {}
+
+	function bound() {
 		var args = slice.call(arguments)
 		var combinedArgs = [].concat(preArgs, args)
-		return func.apply(context, combinedArgs)
+		return func.apply(this instanceof noop ? this : context, combinedArgs)
 	}
+
+	if (func.prototype) {
+		noop.prototype = func.prototype
+	}
+
+	bound.prototype = new noop()
+
+	return bound
 }
-
-var a = {
-	value: 2
-}
-
-function add(a, b) {
-	return this.value + a + b
-}
-
-var newAdd = add.bind(a)
-
-console.log(newAdd(1, 2))

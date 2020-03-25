@@ -1,6 +1,6 @@
 ---
 title: Promise Implementation
-date: 2020-03-24
+date: 2020-03-25
 tags:
   - Daily
 author: Day
