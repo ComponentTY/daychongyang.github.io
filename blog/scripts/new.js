@@ -1,4 +1,4 @@
-function create() {
+function inew() {
 	var current = {}
 
 	var Constructor = Array.prototype.shift.call(arguments)
@@ -7,16 +7,5 @@ function create() {
 
 	var result = Constructor.apply(current, arguments)
 
-	return (typeof result === "object" || typeof result === "function") && result !== null ? result : current
+	return (result !== null && typeof result === "object") || typeof result === "function" ? result : current
 }
-
-function Foo(bar) {
-	this.bar = bar
-	return Symbol()
-}
-
-var foo = create(Foo, "12138")
-console.log(foo)
-
-var foo = new Foo("12")
-console.log(foo)

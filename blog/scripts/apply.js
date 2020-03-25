@@ -1,7 +1,12 @@
-Function.prototype.apply = function(context, args) {
+Function.prototype.iapply = function(context, args) {
 	var context = context || window
-	var func = this
-	context.func = func
+
+	if (typeof this !== "function") {
+		throw new TypeError("Functio")
+	}
+
+	context.func = this
+
 	var result
 
 	if (args) {
@@ -14,13 +19,3 @@ Function.prototype.apply = function(context, args) {
 
 	return result
 }
-
-var foo = {
-	value: 1
-}
-
-function add(a, b) {
-	return this.value + a + b
-}
-
-console.log(add.apply(foo, [1, 2]))
