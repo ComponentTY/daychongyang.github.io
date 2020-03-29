@@ -27,7 +27,7 @@ author: Day
 
 ```sh
 # 安装
-yarn add react-devtools
+yarn add react-devtools -D
 
 # 启动
 react-devtools
