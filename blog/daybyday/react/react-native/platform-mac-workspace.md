@@ -14,8 +14,8 @@ author: Day
 
 ```sh
 #安装 node / http://nodejs.cn/download/
-
-brew install node #安装 文件监控系统
+brew install node 
+#安装 文件监控系统
 brew install watchman
 ```
 
@@ -56,6 +56,14 @@ gem sources --add https://gems.ruby-china.com/
 
 ```sh
 sudo gem install -n /usr/local/bin cocoapods
+
+Building native extensions. This could take a while...
+ERROR:  Error installing cocoapods:
+	ERROR: Failed to build gem native extension.
+
+    current directory: /Library/Ruby/Gems/2.6.0/gems/ffi-1.12.2/ext/ffi_c
+# Ruby 版本问题
+# https://apple.stackexchange.com/questions/384382/installing-cocoapods-on-macos-mojave
 ```
 
 ### 安装失败, 重新安装
