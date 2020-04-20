@@ -34,7 +34,7 @@ module.exports = {
         }
       ]
     },
-    paginationComponent: "SimplePagination",
+    // paginationComponent: "SimplePagination",
     dateFormat: "YYYY-MM-DD",
     smoothScroll: true
     // comment: {
