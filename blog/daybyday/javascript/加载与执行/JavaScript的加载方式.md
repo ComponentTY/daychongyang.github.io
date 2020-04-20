@@ -72,3 +72,5 @@ function require(file, callback) {
 <link rel="prefetch" as="script" href="./a.js" />
 <link rel="preload" as="script" href="./a.js" />
 ```
+
+![javascript加载与执行](/javascript/script.png)
