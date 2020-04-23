@@ -3,7 +3,7 @@ title: JavaScript的加载方式
 date: 2020-04-20
 tags:
   - JavaScript
-  - Deep In JavaScript
+  - DeepInJavaScript
 author: Day
 ---
 
