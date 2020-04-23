@@ -7,11 +7,11 @@ tags:
 author: Day
 ---
 
-JavaScript 是单线程运行的, 在 JavaScript 运行一段代码块的时候,页面中的其他事情(UI 更新、其它脚本加载执行)在同一时间是被挂起的状态, 不能被同时处理.
+JavaScript 是单线程运行的, 在 JavaScript 运行一段代码块的时候,页面中的其他事情(UI 更新、其它脚本加载执行)在同一时刻处于挂起的状态, 不能被同时处理.
 
 `<script>` 标签用来在 HTML 文档中加载可执行脚本, 当浏览器解析 HTML 文档时, 依据 `<script>` 标签不同的属性, 表现不同的行为.
 
-## 同步加载
+## 阻塞加载
 
 浏览器解析 HTML 文档时, 解析到没有 `async`、`defer` 的`<script>`标签时, 会阻塞 HTML 文档的解析, 并按照出现的顺序执行.
 
@@ -33,6 +33,8 @@ JavaScript 是单线程运行的, 在 JavaScript 运行一段代码块的时候,
 1. 仅适用于外部脚本
 2. 加载脚本不会阻塞页面解析
 3. 在 HTML 页面完成解析之后, `DOMContentLoaded` 执行执行(按照出现顺序逐个执行)
+
+![javascript加载与执行](/javascript/script.png)
 
 ## 延迟加载
 
@@ -73,4 +75,10 @@ function require(file, callback) {
 <link rel="preload" as="script" href="./a.js" />
 ```
 
-![javascript加载与执行](/javascript/script.png)
+### preload
+
+专注于当前的页面，并以高优先级加载资源
+
+### prefetch
+
+专注于下一个页面将要加载的资源并以低优先级加载。
