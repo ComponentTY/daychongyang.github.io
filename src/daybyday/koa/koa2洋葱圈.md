@@ -97,7 +97,7 @@ class Koa {
   }
 
   callback() {
-    const fn = compose(this.middlewares)
+    const composedMiddlewares = compose(this.middlewares)
 
     const handleRequest = (request: IncomingMessage, response: ServerResponse) => {
       return this.handleRequest(
@@ -105,14 +105,14 @@ class Koa {
           request,
           response,
         },
-        fn,
+        composedMiddlewares,
       )
     }
 
     return handleRequest
   }
 
-  handleRequest(context: Context, middlewareFunc: Function) {
+  handleRequest(context: Context, composedMiddlewares: Function) {
     return middlewareFunc(context)
       .then(() => {
         context.response.end('hello koa')
