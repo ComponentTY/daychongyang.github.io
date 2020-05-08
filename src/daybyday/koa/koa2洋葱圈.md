@@ -71,7 +71,8 @@ function compose(middlewares: Middleware[]) {
       if (!middleware) return Promise.resolve()
 
       try {
-        const result = middleware(context, dispatch.bind(null, current + 1))
+        const next =dispatch.bind(null, current + 1)
+        const result = middleware(context, next)
         return Promise.resolve(result)
       } catch (e) {
         return Promise.reject(e)
