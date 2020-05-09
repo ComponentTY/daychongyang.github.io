@@ -2,36 +2,37 @@
 title: Koa2 洋葱模型
 date: 2020-05-08
 tags:
-  - Koa 
+  - Koa
   - Node.js
 author: Day
 ---
 
 ## Hello Koa
+
 ```ts
-import Koa from 'koa'
+import Koa from "koa";
 
-const app = new Koa()
-
-app.use(async (ctx, next) => {
-  console.log('1-1')
-  await next()
-  console.log('1-2')
-})
+const app = new Koa();
 
 app.use(async (ctx, next) => {
-  console.log('2-1')
-  await next()
-  console.log('2-2')
-})
+  console.log("1-1");
+  await next();
+  console.log("1-2");
+});
 
 app.use(async (ctx, next) => {
-  console.log('3-1')
-})
+  console.log("2-1");
+  await next();
+  console.log("2-2");
+});
+
+app.use(async (ctx, next) => {
+  console.log("3-1");
+});
 
 app.listen(9527, function() {
-  console.log('9527')
-})
+  console.log("9527");
+});
 
 // 访问输出结果
 // 9527
@@ -47,8 +48,10 @@ app.listen(9527, function() {
 ```js
 import http, { IncomingMessage, ServerResponse } from 'http'
 
+type Next = ()=>Promise<any>
+
 interface Middleware {
-  (context: Context, next: Function): any
+  (context: Context, next: Next): any
 }
 
 interface Context {
@@ -59,7 +62,7 @@ interface Context {
 /** =>!<= **/
 function compose(middlewares: Middleware[]) {
   /** Closure */
-  return function(context: Context, next: Middleware) {
+  return function(context: Context, next: Next) {
     let preIndex = -1
     return dispatch(0)
 
