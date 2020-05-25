@@ -2,6 +2,7 @@
 title: 前端渲染方式及性能指标
 date: 2020-03-11
 tags:
+  - HTML
   - 性能指标
 author: Day
 ---
