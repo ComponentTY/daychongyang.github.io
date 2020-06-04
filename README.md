@@ -1,7 +1,5 @@
 # DayDayUp
 
-[![npm][npm]][npm-url]
-
 ## HTMLCSS 篇
 
 1. SEO 和语义化
